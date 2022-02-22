@@ -17,7 +17,7 @@ object MyDBNameClass {
     const val CREATE_TABLE = "CREATE TABLE IF NOT EXIST $TABLE_NAME (" +
     "${BaseColumns._ID} INTEGER PRIMARY KEY," +
     "$COLUMN_NAME_TITLE TEXT," +
-    "$COLUMN_NAME_CONTENT TEXT)"  // TEXT тип данных который будет в колонке таблицы
+    "$COLUMN_NAME_CONTENT TEXT)"
 
     const val SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS $TABLE_NAME"
 }
