@@ -43,7 +43,7 @@ class MyDBManager(context: Context) {
         return dataList
     }
 
-    fun CloseDB() {
+    fun closeDB() {
         MyDBHelper.close()
     }
 

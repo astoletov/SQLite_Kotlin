@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/astol/AndroidStudioProjects/LessonSQLiteKotlin/app/src/main/res/layout/activity_main.xml" value="0.36102564102564105" />
+        <entry key="..\:/Users/astol/AndroidStudioProjects/LessonSQLiteKotlin/app/src/main/res/drawable-anydpi/ic_add.xml" value="0.31875" />
+        <entry key="..\:/Users/astol/AndroidStudioProjects/LessonSQLiteKotlin/app/src/main/res/drawable-anydpi/ic_save.xml" value="0.3828125" />
+        <entry key="..\:/Users/astol/AndroidStudioProjects/LessonSQLiteKotlin/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/astol/AndroidStudioProjects/LessonSQLiteKotlin/app/src/main/res/layout/edit_activity.xml" value="0.3026041666666667" />
       </map>
     </option>
   </component>
