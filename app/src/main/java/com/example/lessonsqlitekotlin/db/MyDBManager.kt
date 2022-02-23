@@ -1,5 +1,6 @@
 package com.example.lessonsqlitekotlin.db
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
@@ -12,10 +13,10 @@ class MyDBManager(context: Context) {
     private var db: SQLiteDatabase? = null
 
     fun openDB() {
-      db = MyDBHelper.writableDatabase
+        db = MyDBHelper.writableDatabase
     }
 
-    fun insertToDB (title: String, content: String ) {
+    fun insertToDB(title: String, content: String) {
         val values = ContentValues().apply {
             put(MyDBNameClass.COLUMN_NAME_TITLE, title)
             put(MyDBNameClass.COLUMN_NAME_CONTENT, content)
@@ -23,19 +24,27 @@ class MyDBManager(context: Context) {
         db?.insert(MyDBNameClass.TABLE_NAME, null, values)
     }
 
-    fun readDBData() : ArrayList<String> {
+    //@SuppressLint("Range")
+    fun readDBData(): ArrayList<String> {
         val dataList = ArrayList<String>()
-        val cursor = db?.query(MyDBNameClass.TABLE_NAME, null, null, null, null, null, null)
+        val cursor = db?.query(MyDBNameClass.TABLE_NAME,
+            null, null, null, null, null, null)
 
         with(cursor) {
             while (this?.moveToNext()!!) {
-                val dataText= cursor?.getString(cursor.getColumnIndex(MyDBNameClass.COLUMN_NAME_TITLE))
+                val dataText = cursor?.getString(cursor.getColumnIndex(MyDBNameClass.COLUMN_NAME_TITLE).toInt())
                 dataList.add(dataText.toString())
             }
         }
 
 
+
+        cursor?.close()
         return dataList
+    }
+
+    fun CloseDB() {
+        MyDBHelper.close()
     }
 
 }
